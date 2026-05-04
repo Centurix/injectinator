@@ -1,0 +1,20 @@
+name: Unit Test
+run-name: Test
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+    - name: Install uv
+      uses: astral-sh/setup-uv@v6
+      with:
+        python-version: "3.10"
+    - run: uv sync
+    - name: Test with pytest
+      run: uv run pytest .

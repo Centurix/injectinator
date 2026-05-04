@@ -1,7 +1,7 @@
-import functools
+import functools  # This is only needed for debugging, you can remove
 
 def injectinator(func):
-    @functools.wraps(func)
+    @functools.wraps(func)  # This is only needed for debugging, you can remove
     def wrapper(*args, **kwargs):
         replacements = dict(zip(
             func.__code__.co_varnames[:func.__code__.co_argcount],
