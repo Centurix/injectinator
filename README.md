@@ -80,6 +80,23 @@ def injectinator(func):
 
 This will retain the call stack and debugging easier. But as the script is below, you can add it without imports.
 
+Can I Just Install This As A Dependency?
+=
+
+For sure, this is available on pypi:
+
+`pip install injectinator`
+
+And then in your code
+
+```
+from injectinator import injectinator
+
+@injectinator
+def myfun(...):
+    ...
+```
+
 Notes on this script
 -
 

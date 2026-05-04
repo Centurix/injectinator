@@ -1,4 +1,4 @@
-from inject import injectinator
+from src.injectinator import injectinator
 from abc import ABC, abstractmethod
 
 
