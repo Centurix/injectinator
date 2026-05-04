@@ -1,0 +1,26 @@
+name: Publish
+run-name: Publish
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v6
+    - name: Install uv
+      uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b
+      with:
+        python-version: "3.10"
+    - run: uv sync
+    - name: Check project version
+      uses: maybe-hello-world/pyproject-check-version@v4
+      id: versioncheck
+      with:
+        pyproject-path: "./pyproject.toml"
+    - name: Publish the pypi project
+      if: steps.versioncheck.outputs.local_version_is_higher == 'true'
+      run: uv build && uv publish -t ${{ secrets.PYPI_TOKEN }}

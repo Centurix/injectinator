@@ -81,3 +81,5 @@ on what we're actually doing, not wandering off into too much imaginary stuff.
 Q: What should I be thinking when making a change to this repo?
 A: The aim of this script is to be small and without dependency while still
 performing the job.
+Q: Which environment manager does this use?
+A: `uv`
