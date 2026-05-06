@@ -1,6 +1,6 @@
 [project]
 name = "Injectinator"
-version = "0.4.1"
+version = "0.4.2"
 description = "Very simple dependency injection"
 authors = [
     {name = "Chris Read",email = "centurix@gmail.com"},

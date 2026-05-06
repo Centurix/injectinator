@@ -5,11 +5,11 @@ P = ParamSpec("P")
 R = TypeVar("R")
 
 def injectinator(func: Callable[P, R]) -> Callable[P, R]:
+    """
+    Very simple dependency injection wrapper that supplies concrete instances of specified class definitions from a functions specification
+    """
     @functools.wraps(func)  # This is only needed for debugging, you can remove
     def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
-        """
-        Very simple dependency injection wrapper that supplies concrete instances of specified class definitions from a functions specification
-        """
         replacements = dict(zip(
             func.__code__.co_varnames[:func.__code__.co_argcount],
             list(([None] * func.__code__.co_argcount) + list(func.__defaults__ or []))[-func.__code__.co_argcount:]
