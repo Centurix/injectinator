@@ -103,10 +103,10 @@ Notes on this script
 - It relies on dunder methods on `func` itself, so these _could_ change in the future. They've all been clumped up together for this reason to make it obvious when it fails because the Python foundation changed their usage of dunders
 - There is no parameter support on the injected class, it could be adjusted to support them
 - All the config for the injection is in the function specification rather than the decorator
-- There's no types. It should have types I guess. Probably added to the two function specifications. Could be lazy and just make it all `Any` but then you'd have to drag in `typing` as an import for this gist
 - I have not timed this. It could be wildly inefficient. There's an iteration enumerating over the function parameter list so its O(n)
 - This script does work with arbitrary length argument specifications like adding `*args` to the end
-- Although it is DI in 11 lines, I've no interest in code golf.
+- Although it is DI in 11 lines, I've no interest in code golf
+- There is a typed version of this in typed.py, just in case your type checked is getting a little nervous around it.
 
 Operation
 -
