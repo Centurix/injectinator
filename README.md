@@ -1,6 +1,8 @@
 ![build workflow](https://github.com/Centurix/injectinator/actions/workflows/test.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![uv-managed](https://img.shields.io/badge/uv-managed-blueviolet)
+![pypi](https://img.shields.io/pypi/v/pydanja)
+![status](https://img.shields.io/pypi/status/pydanja)
 
 INJECTINATOR
 =
