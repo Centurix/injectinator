@@ -102,6 +102,7 @@ def myfun(...):
 Notes on this script
 -
 
+- The typing is a bit squirrely with the parameters default class and the object instance type. Type checkers will probably complain about it. This is about gaining functionality over typing accuracy. If you know what and why about this, then it can be explained
 - It relies on dunder methods on `func` itself, so these _could_ change in the future. They've all been clumped up together for this reason to make it obvious when it fails because the Python foundation changed their usage of dunders
 - There is no parameter support on the injected class, it could be adjusted to support them
 - All the config for the injection is in the function specification rather than the decorator

@@ -11,8 +11,8 @@ def injectinator(func: Callable[P, R]) -> Callable[P, R]:
     @functools.wraps(func)  # This is only needed for debugging, you can remove
     def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
         replacements = dict(zip(
-            func.__code__.co_varnames[:func.__code__.co_argcount],
-            list(([None] * func.__code__.co_argcount) + list(func.__defaults__ or []))[-func.__code__.co_argcount:]
+            func.__code__.co_varnames[:func.__code__.co_argcount],  # ty: ignore[unresolved-attribute]
+            list(([None] * func.__code__.co_argcount) + list(func.__defaults__ or []))[-func.__code__.co_argcount:]  # ty: ignore[unresolved-attribute]
         ))
         for position, default in enumerate(replacements.keys()):
             if position >= len(args):

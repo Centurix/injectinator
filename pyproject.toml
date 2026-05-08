@@ -1,6 +1,6 @@
 [project]
 name = "Injectinator"
-version = "0.4.2"
+version = "0.4.3"
 description = "Very simple dependency injection"
 authors = [
     {name = "Chris Read",email = "centurix@gmail.com"},
@@ -29,6 +29,8 @@ repository = "https://github.com/Centurix/injectinator"
 [dependency-groups]
 dev = [
     "pytest>=9.0.3",
+    "ruff>=0.15.12",
+    "ty>=0.0.34",
 ]
 
 [tool.setuptools]
