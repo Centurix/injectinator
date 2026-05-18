@@ -80,7 +80,7 @@ def injectinator(func):
         ...
 ```
 
-This will retain the call stack and debugging easier. But as the script is below, you can add it without imports.
+This will retain the call stack and make debugging easier. But as the script is above, you can add it without imports.
 
 Can I Just Install This As A Dependency?
 =
